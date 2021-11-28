@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2014年蓝桥杯省赛真题 | Guttttzhi'Blog</title><meta name="keywords" content="蓝桥杯"><meta name="author" content="Guttttzhi"><meta name="copyright" content="Guttttzhi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="2014年蓝桥杯省赛真题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2014年蓝桥杯省赛真题">
+<meta property="og:url" content="http://example.com/2021/11/28/algorithm/LanQiao/2014%E5%B9%B4%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9B%E7%9C%9F%E9%A2%98/index.html">
+<meta property="og:site_name" content="Guttttzhi&#39;Blog">
+<meta property="og:description" content="2014年蓝桥杯省赛真题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500">
+<meta property="article:published_time" content="2021-11-28T08:33:04.000Z">
+<meta property="article:modified_time" content="2021-11-28T15:50:39.825Z">
+<meta property="article:author" content="Guttttzhi">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/11/28/algorithm/LanQiao/2014%E5%B9%B4%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9B%E7%9C%9F%E9%A2%98/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2014年蓝桥杯省赛真题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-28 23:50:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/hero.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img0.baidu.com/it/u=454715195,1460490061&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=501&amp;h=500')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Guttttzhi'Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2014年蓝桥杯省赛真题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-28T08:33:04.000Z" title="发表于 2021-11-28 16:33:04">2021-11-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-28T15:50:39.825Z" title="更新于 2021-11-28 23:50:39">2021-11-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%93%9D%E6%A1%A5%E6%9D%AF/">蓝桥杯</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="2014年蓝桥杯省赛真题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h1><p>小明到X山洞探险，捡到一本有破损的武功秘籍（2000多页！当然是伪造的）。<br>他注意到：书的第10页和第11页在同一张纸上，但第11页和第12页不在同一张纸上 。<br>小明只想练习该书的第a页到第b页的武功，又不想带着整本书。请问他至少要撕下多少张纸带走？</p>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 武功秘籍 </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> m=scanner.nextInt();</span><br><span class="line">		<span class="keyword">int</span> n=scanner.nextInt();</span><br><span class="line">		<span class="keyword">int</span> ans;</span><br><span class="line">		<span class="keyword">if</span>(m%<span class="number">2</span>!=<span class="number">0</span>&amp;&amp;n%<span class="number">2</span>==<span class="number">0</span>) &#123;</span><br><span class="line">			ans=((n-m)/<span class="number">2</span>)+<span class="number">2</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			ans=((n-m)/<span class="number">2</span>)+<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">&quot;至少需要撕掉&quot;</span>+ans+<span class="string">&quot;页&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h1><p>一根高筋拉面，中间切一刀，可以得到2根面条。<br>如果先对折1次，中间切一刀，可以得到3根面条。<br>如果连续对折2次，中间切一刀，可以得到5根面条。<br>那么，连续对折10次，中间切一刀，会得到多少面条呢？<br>答案是个整数，请通过浏览器提交答案。不要填写任何多余的内容。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 切面条 </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//f(i)=2*f(i-1)-1;</span></span><br><span class="line">		<span class="keyword">int</span>[] dp=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">50</span>];</span><br><span class="line">		dp[<span class="number">0</span>]=<span class="number">2</span>;</span><br><span class="line">		dp[<span class="number">1</span>]=<span class="number">3</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++) &#123;</span><br><span class="line">			dp[i]=<span class="number">2</span>*dp[i-<span class="number">1</span>]-<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">&quot;第十次对折的结果&quot;</span>+dp[<span class="number">10</span>]);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h1><p>把abcd…s共19个字母组成的序列重复拼接106次，得到长度为2014的串。</p>
+<p>接下来删除第1个字母（即开头的字母a），以及第3个，第5个等所有奇数位置的字母。</p>
+<p>得到的新串再进行删除奇数位置字母的动作。如此下去，最后只剩下一个字母，请写出该字母</p>
+<h2 id="解法-1"><a href="#解法-1" class="headerlink" title="解法"></a>解法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 猜字母 </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> p=<span class="number">0</span>,index=<span class="number">0</span>,len=<span class="number">2014</span>;<span class="comment">//哨兵</span></span><br><span class="line">		<span class="keyword">char</span>[] arr=<span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">2014</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">106</span>;i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">19</span>;j++) &#123;</span><br><span class="line">				arr[index++]=(<span class="keyword">char</span>) (<span class="string">&#x27;a&#x27;</span>+j);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(len!=<span class="number">1</span>) &#123;</span><br><span class="line">			p=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;len;i+=<span class="number">2</span>) &#123;</span><br><span class="line">				arr[p++]=arr[i];</span><br><span class="line">			&#125;</span><br><span class="line">			len=p;	</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(arr[<span class="number">0</span>]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="题目四"><a href="#题目四" class="headerlink" title="题目四"></a>题目四</h1><pre><code>中国古代文献中，曾记载过“大衍数列”, 主要用于解释中国传统文化中的太极衍生原理。
+
+它的前几项是：0、2、4、8、12、18、24、32、40、50 ...
+
+其规律是：对偶数项，是序号平方再除2，奇数项，是序号平方减1再除2。
+
+以下的代码打印出了大衍数列的前 100 项。
+</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;<span class="number">100</span>; i++)&#123;</span><br><span class="line"><span class="keyword">if</span>(__________________) <span class="comment">//填空</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i*i/<span class="number">2</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, (i*i<span class="number">-1</span>)/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解法-2"><a href="#解法-2" class="headerlink" title="解法"></a>解法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i%<span class="number">2</span>==<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="题目五"><a href="#题目五" class="headerlink" title="题目五"></a>题目五</h1><p>数学发展历史上，圆周率的计算曾有许多有趣甚至是传奇的故事。其中许多方法都涉及无穷级数。</p>
+<p>图1.png中所示，就是一种用连分数的形式表示的圆周率求法。</p>
+<p>下面的程序实现了该求解方法。实际上数列的收敛对x的初始值 并不敏感。 </p>
+<p>结果打印出圆周率近似值（保留小数点后4位，并不一定与圆周率真值吻合）。<br>在这里插入图片描述</p>
+<p><img src="https://gitee.com/gutianzhi/imgbed/raw/master/markdownImgs/20211128210809.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> x = <span class="number">111</span>; </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> n = <span class="number">10000</span>; n&gt;=<span class="number">0</span>; n--)&#123;</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">2</span> * n + <span class="number">1</span>;</span><br><span class="line">x = <span class="number">2</span> + (i*i / x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">System.out.println(String.format(<span class="string">&quot;%.4f&quot;</span>, ______________));</span><br></pre></td></tr></table></figure>
+<h2 id="解法-3"><a href="#解法-3" class="headerlink" title="解法"></a>解法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span>/(x-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="题目六"><a href="#题目六" class="headerlink" title="题目六"></a>题目六</h1><p>上小学的时候，小明经常自己发明新算法。一次，老师出的题目是：<br>    1/4 乘以 8/5 </p>
+<pre><code>小明居然把分子拼接在一起，分母拼接在一起，答案是：18/45 （参见下图）
+
+老师刚想批评他，转念一想，这个答案凑巧也对啊，真是见鬼！
+
+对于分子、分母都是 1~9 中的一位数的情况，还有哪些算式可以这样计算呢？
+
+请写出所有不同算式的个数（包括题中举例的）。
+
+显然，交换分子分母后，例如：4/1 乘以 5/8 是满足要求的，这算做不同的算式。
+
+但对于分子分母相同的情况，2/2 乘以 3/3 这样的类型太多了，不在计数之列!
+</code></pre>
+<p>注意：答案是个整数（考虑对称性，肯定是偶数）。请通过浏览器提交。</p>
+<h2 id="解法-4"><a href="#解法-4" class="headerlink" title="解法"></a>解法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 大衍数列 </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> a=<span class="number">1</span>;a&lt;<span class="number">10</span>;a++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">1</span>;b&lt;<span class="number">10</span>;b++) &#123;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span>(a==b) <span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> c=<span class="number">1</span>;c&lt;<span class="number">10</span>;c++) &#123;</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> d=<span class="number">1</span>;d&lt;<span class="number">10</span>;d++) &#123;</span><br><span class="line">						<span class="keyword">if</span>(c==d) <span class="keyword">continue</span>;</span><br><span class="line">						</span><br><span class="line">						<span class="keyword">int</span> g1=gcd(a*c,b*d);</span><br><span class="line">						<span class="keyword">int</span> g2=gcd(a*<span class="number">10</span>+c, b*<span class="number">10</span>+d);</span><br><span class="line">						<span class="keyword">if</span>(a*c/g1==(a*<span class="number">10</span>+c)/g2&amp;&amp;b*d/g1==(b*<span class="number">10</span>+d)/g2) &#123;</span><br><span class="line">							ans++;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(ans);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(j==<span class="number">0</span>) <span class="keyword">return</span> i;</span><br><span class="line">		<span class="keyword">return</span> gcd(j, i%j);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="题目七-扑克序列"><a href="#题目七-扑克序列" class="headerlink" title="题目七(扑克序列)"></a>题目七(扑克序列)</h1><p>A A 2 2 3 3 4 4， 一共4对扑克牌。请你把它们排成一行。<br>要求：两个A中间有1张牌，两个2之间有2张牌，两个3之间有3张牌，两个4之间有4张牌。</p>
+<p>请填写出所有符合要求的排列中，字典序最小的那个。</p>
+<p>例如：22AA3344 比 A2A23344 字典序小。当然，它们都不是满足要求的答案。</p>
+<p>请通过浏览器提交答案。“A”一定不要用小写字母a，也不要用“1”代替。字符间一定不要留空格。</p>
+<h2 id="解法-5"><a href="#解法-5" class="headerlink" title="解法"></a>解法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 扑克排序 </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">static</span> Set&lt;String&gt; set=<span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">char</span>[] a= &#123;<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>,<span class="string">&#x27;3&#x27;</span>,<span class="string">&#x27;4&#x27;</span>,<span class="string">&#x27;4&#x27;</span>&#125;;</span><br><span class="line">		f(a,<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span>(String set:set) &#123;</span><br><span class="line">			System.out.println(set);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">char</span>[] a, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(k==a.length) &#123;</span><br><span class="line">			String string=<span class="keyword">new</span> String(a);</span><br><span class="line">			<span class="keyword">if</span>(check(string)) &#123;</span><br><span class="line">				set.add(string);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=k;i&lt;a.length;i++) &#123;</span><br><span class="line">			<span class="keyword">char</span> t=a[k];</span><br><span class="line">			a[k]=a[i];</span><br><span class="line">			a[i]=t;</span><br><span class="line">			f(a, k+<span class="number">1</span>);</span><br><span class="line">			t=a[k];</span><br><span class="line">			a[k]=a[i];</span><br><span class="line">			a[i]=t;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(s.lastIndexOf(<span class="string">&#x27;A&#x27;</span>)-s.indexOf(<span class="string">&#x27;A&#x27;</span>)==<span class="number">2</span>&amp;&amp;</span><br><span class="line">			s.lastIndexOf(<span class="string">&#x27;2&#x27;</span>)-s.indexOf(<span class="string">&#x27;2&#x27;</span>)==<span class="number">3</span>&amp;&amp;</span><br><span class="line">			s.lastIndexOf(<span class="string">&#x27;3&#x27;</span>)-s.indexOf(<span class="string">&#x27;3&#x27;</span>)==<span class="number">4</span>&amp;&amp;</span><br><span class="line">			s.lastIndexOf(<span class="string">&#x27;4&#x27;</span>)-s.indexOf(<span class="string">&#x27;4&#x27;</span>)==<span class="number">5</span></span><br><span class="line">			)</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="题目八"><a href="#题目八" class="headerlink" title="题目八"></a>题目八</h1><p>问题描述<br>　　有n个小朋友围坐成一圈。老师给每个小朋友随机发偶数个糖果，然后进行下面的游戏：</p>
+<p>　　每个小朋友都把自己的糖果分一半给左手边的孩子。</p>
+<p>　　一轮分糖后，拥有奇数颗糖的孩子由老师补给1个糖果，从而变成偶数。</p>
+<p>　　反复进行这个游戏，直到所有小朋友的糖果数都相同为止。</p>
+<p>　　你的任务是预测在已知的初始糖果情形下，老师一共需要补发多少个糖果。<br>输入格式<br>　　程序首先读入一个整数N(2&lt;N&lt;100)，表示小朋友的人数。<br>　　接着是一行用空格分开的N个偶数（每个偶数不大于1000，不小于2）<br>输出格式<br>　　要求程序输出一个整数，表示老师需要补发的糖果数。<br>样例输入<br>3<br>2 2 4<br>样例输出<br>4<br>分析：</p>
+<p>前一个的孩子会得到后一个孩子（偶数）的一半（模拟）.</p>
+<h2 id="解法-6"><a href="#解法-6" class="headerlink" title="解法"></a>解法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 分糖果 </span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> ans=<span class="number">0</span>,N;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span>[] a;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		N=sc.nextInt();</span><br><span class="line">		a=<span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;i++) &#123;</span><br><span class="line">			a[i]=sc.nextInt();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">			<span class="keyword">int</span> t=a[<span class="number">0</span>];</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;N-<span class="number">1</span>;j++) &#123;</span><br><span class="line">				a[j]-=a[j]/<span class="number">2</span>;</span><br><span class="line">				a[j]+=a[j+<span class="number">1</span>]/<span class="number">2</span>;	</span><br><span class="line">				<span class="keyword">if</span>((a[j]&amp;<span class="number">1</span>)==<span class="number">1</span>) &#123;</span><br><span class="line">					ans++;</span><br><span class="line">					a[j]+=<span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			a[N-<span class="number">1</span>]-=a[N-<span class="number">1</span>]/<span class="number">2</span>;</span><br><span class="line">			a[N-<span class="number">1</span>]+=t/<span class="number">2</span>;</span><br><span class="line">			<span class="keyword">if</span>((a[N-<span class="number">1</span>]&amp;<span class="number">1</span>)==<span class="number">1</span>) &#123;</span><br><span class="line">				ans++;</span><br><span class="line">				a[N-<span class="number">1</span>]+=<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(check()) &#123;</span><br><span class="line">				System.out.println(ans);</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> t=a[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;N;i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(t!=a[i]) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Guttttzhi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/11/28/algorithm/LanQiao/2014%E5%B9%B4%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9B%E7%9C%9F%E9%A2%98/">http://example.com/2021/11/28/algorithm/LanQiao/2014%E5%B9%B4%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9B%E7%9C%9F%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Guttttzhi'Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="https://img0.baidu.com/it/u=454715195,1460490061&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=501&amp;h=500" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/11/25/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8BDemo1/"><img class="next-cover" src="https://img0.baidu.com/it/u=454715195,1460490061&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=501&amp;h=500" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">java网络编程Demo1</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/11/20/JDK环境变量的配置/" title="JDK环境变量的配置"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-20</div><div class="title">JDK环境变量的配置</div></div></a></div><div><a href="/2021/11/25/java网络编程Demo1/" title="java网络编程Demo1"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-25</div><div class="title">java网络编程Demo1</div></div></a></div><div><a href="/2021/11/21/maven安装与配置/" title="maven安装与配置"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-21</div><div class="title">maven安装与配置</div></div></a></div><div><a href="/2021/11/25/mongodb实现评论功能/" title="mongodb实现评论功能"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-25</div><div class="title">mongodb实现评论功能</div></div></a></div><div><a href="/2021/11/22/algorithm/LanQiao/2013年JavaB组蓝桥杯省赛真题/" title="2013年JavaB组蓝桥杯省赛真题"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-22</div><div class="title">2013年JavaB组蓝桥杯省赛真题</div></div></a></div><div><a href="/2021/10/01/algorithm/Sort/BubbleSort/" title="冒泡排序"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-01</div><div class="title">冒泡排序</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80"><span class="toc-number">1.</span> <span class="toc-text">题目一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">解法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C"><span class="toc-number">2.</span> <span class="toc-text">题目二</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%89"><span class="toc-number">3.</span> <span class="toc-text">题目三</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95-1"><span class="toc-number">3.1.</span> <span class="toc-text">解法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%9B%9B"><span class="toc-number">4.</span> <span class="toc-text">题目四</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95-2"><span class="toc-number">4.1.</span> <span class="toc-text">解法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%94"><span class="toc-number">5.</span> <span class="toc-text">题目五</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95-3"><span class="toc-number">5.1.</span> <span class="toc-text">解法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%85%AD"><span class="toc-number">6.</span> <span class="toc-text">题目六</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95-4"><span class="toc-number">6.1.</span> <span class="toc-text">解法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%83-%E6%89%91%E5%85%8B%E5%BA%8F%E5%88%97"><span class="toc-number">7.</span> <span class="toc-text">题目七(扑克序列)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95-5"><span class="toc-number">7.1.</span> <span class="toc-text">解法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%85%AB"><span class="toc-number">8.</span> <span class="toc-text">题目八</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95-6"><span class="toc-number">8.1.</span> <span class="toc-text">解法</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://img0.baidu.com/it/u=454715195,1460490061&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=501&amp;h=500')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Guttttzhi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="biu,biu,biu" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/theme_f/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+                        function gitcalendar_injector_config(){
+                          var parent_div_git = document.getElementById('recent-posts');
+                          var item_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+                          parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+                          console.log('已挂载gitcalendar')
+                          }
+
+                        if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+                            gitcalendar_injector_config()
+                            GitCalendarInit("https://gitcalendar.akilar.top/api?gutianzhi",['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620'],'gutianzhi')
+                        }
+                      </script><!-- hexo injector body_end end --></body></html>

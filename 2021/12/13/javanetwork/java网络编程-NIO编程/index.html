@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>java网络编程-NIO编程 | Guttttzhi'Blog</title><meta name="keywords" content="java,网络编程,NIO"><meta name="author" content="Guttttzhi"><meta name="copyright" content="Guttttzhi"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="java网络编程-NIO编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java网络编程-NIO编程">
+<meta property="og:url" content="http://example.com/2021/12/13/javanetwork/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-NIO%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Guttttzhi&#39;Blog">
+<meta property="og:description" content="java网络编程-NIO编程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500">
+<meta property="article:published_time" content="2021-12-13T02:06:52.000Z">
+<meta property="article:modified_time" content="2021-12-13T06:25:17.846Z">
+<meta property="article:author" content="Guttttzhi">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="网络编程">
+<meta property="article:tag" content="NIO">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/12/13/javanetwork/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-NIO%E7%BC%96%E7%A8%8B/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'java网络编程-NIO编程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-13 14:25:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/hero.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">29</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img0.baidu.com/it/u=454715195,1460490061&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=501&amp;h=500')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Guttttzhi'Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">java网络编程-NIO编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-13T02:06:52.000Z" title="发表于 2021-12-13 10:06:52">2021-12-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-12-13T06:25:17.846Z" title="更新于 2021-12-13 14:25:17">2021-12-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">java网络编程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="java网络编程-NIO编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="五种网络IO模型"><a href="#五种网络IO模型" class="headerlink" title="五种网络IO模型"></a>五种网络IO模型</h1><h2 id="底层网络IO的实现方式"><a href="#底层网络IO的实现方式" class="headerlink" title="底层网络IO的实现方式"></a>底层网络IO的实现方式</h2><p>第一阶段：等待数据到达Socket缓冲区（操作系统为每个socket建立的一片内存系统区）。 wait for data，<br>第二阶段：从内核复制数据到用户程序区，这时用户才可以使用数据。 copy data from kernel to user</p>
+<h2 id="阻塞IO"><a href="#阻塞IO" class="headerlink" title="阻塞IO"></a>阻塞IO</h2><p><img src="https://gitee.com/gutianzhi/imgbed/raw/master/markdownImgs/20211213104117.png"></p>
+<h2 id="非阻塞IO"><a href="#非阻塞IO" class="headerlink" title="非阻塞IO"></a>非阻塞IO</h2><p><img src="https://gitee.com/gutianzhi/imgbed/raw/master/markdownImgs/20211213104454.png"><br>第一阶段是非阻塞的，不断检查是否数据准备好，第二阶段阻塞读取数据<br>recvfrom -&gt; [syscall -&gt; wait -&gt;] return no data ready<br>recvfrom -&gt; [syscall -&gt; wait -&gt;] return no data ready<br>recvfrom -&gt; [syscall -&gt; wait -&gt;] return ready<br>recvfrom -&gt; [syscall -&gt; copy -&gt;] return OK</p>
+<h2 id="多路复用IO"><a href="#多路复用IO" class="headerlink" title="多路复用IO"></a>多路复用IO</h2><p><img src="https://gitee.com/gutianzhi/imgbed/raw/master/markdownImgs/20211213111821.png"><br>每个IO都是非阻塞IO，第一阶段通过select/poll方法，一次性轮询多个IO句柄，检查是否有IO句柄准备好，第二阶段阻塞读取数据<br>select/pool -&gt; [syscall -&gt; wait -&gt;] return readable<br>recvfrom -&gt; [syscall -&gt; copy -&gt;] return OK</p>
+<h2 id="信号驱动IO"><a href="#信号驱动IO" class="headerlink" title="信号驱动IO"></a>信号驱动IO</h2><p><img src="https://gitee.com/gutianzhi/imgbed/raw/master/markdownImgs/20211213132447.png"><br>第一阶段构造一个信号处理器<br>第二阶段阻塞读取数据<br>signal handle -&gt; [syscall -&gt; wait -&gt;] return<br>[syscall -&gt;] signal handle -&gt; recvfrom -&gt; [syscall -&gt; copy -&gt;] return OK</p>
+<h2 id="异步IO"><a href="#异步IO" class="headerlink" title="异步IO"></a>异步IO</h2><p><img src="https://gitee.com/gutianzhi/imgbed/raw/master/markdownImgs/20211213132553.png"><br>两阶段都是非阻塞<br>aio_read -&gt; [syscall -&gt; wait -&gt;] return<br>[syscall -&gt; copy -&gt;] aio_read callback</p>
+<h2 id="五种模型的比较"><a href="#五种模型的比较" class="headerlink" title="五种模型的比较"></a>五种模型的比较</h2><p><img src="https://gitee.com/gutianzhi/imgbed/raw/master/markdownImgs/20211213132724.png"></p>
+<h2 id="简单NIO的使用"><a href="#简单NIO的使用" class="headerlink" title="简单NIO的使用"></a>简单NIO的使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">List&lt;SocketChannel&gt; channelList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">ServerSocketChannel serverSocket = ServerSocketChannel.open(); </span><br><span class="line">serverSocket.bind(<span class="keyword">new</span> InetSocketAddress(<span class="number">9000</span>)); </span><br><span class="line">serverSocket.configureBlocking(<span class="keyword">false</span>);  <span class="comment">//设置ServerSocketChannel为非阻塞</span></span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">     <span class="comment">// 非阻塞模式accept方法不会阻塞，否则会阻塞 </span></span><br><span class="line">     SocketChannel socketChannel = serverSocket.accept(); </span><br><span class="line">    <span class="keyword">if</span> (socketChannel != <span class="keyword">null</span>) &#123;         System.out.println(<span class="string">&quot;连接成功&quot;</span>);     socketChannel.configureBlocking(<span class="keyword">false</span>);   channelList.add(socketChannel);  &#125; </span><br><span class="line">    Iterator&lt;SocketChannel&gt; iterator = channelList.iterator(); </span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;  SocketChannel sc = iterator.next(); ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="number">128</span>); <span class="keyword">int</span> len = sc.read(byteBuffer); </span><br><span class="line">        <span class="keyword">if</span> (len &gt; <span class="number">0</span>) &#123;    System.out.println(<span class="string">&quot;接收到消息：&quot;</span> + <span class="keyword">new</span> String(byteBuffer.array(),<span class="number">0</span>,len)); &#125; </span><br><span class="line">       <span class="keyword">else</span> <span class="keyword">if</span> (len == ‐<span class="number">1</span>) &#123;  iterator.remove(); System.out.println(<span class="string">&quot;客户端断开连接&quot;</span>); &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在BIO模式中，服务端是否有数据是靠客户线程去轮询，每一个客户都建立一个线程。在NIO模式中，不会为每个用户创建线程，假设有10K的连接数，程序的每一次循环中都需要去遍历10k的socket，检查socket中是否有数据可读，若10k个连接中只有1000个socket有数据，仍然需要遍历10k次，下一次循环又需要遍历10k次，但每次只有少部分有IO需求，浪费大量时间，为了解决该问题，操作系统提出了IO多路复用的技术，即IO的第三种模型。</p>
+<h1 id="多路复用IO技术的NIO模型"><a href="#多路复用IO技术的NIO模型" class="headerlink" title="多路复用IO技术的NIO模型"></a>多路复用IO技术的NIO模型</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>1、Channel：ServerSocketChannel,SocketChannel（通道)</p>
+<p>2、Selector：多路复用器（选择器)</p>
+<p>3、Buffer：channel读写需要使用的缓冲区</p>
+<h2 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h2><ul>
+<li>接口Channel：用于 I/O 操作的连接。</li>
+<li>抽象类SelectableChannel：可通过 Selector 实现多路复用的通道。为了与选择器一起使用，此类的实例必须首先通过 register 方法进行注册。此方法返回一个表示该通道已向选择器注册的新 SelectionKey 对象。可选择的通道要么处于阻塞 模式，要么处于非阻塞 模式。在阻塞模式中，每一个 I/O 操作完成之前都会阻塞在其通道上调用的其他 I/O 操作。在非阻塞模式中，永远不会阻塞 I/O 操作，并且传输的字节可能少于请求的数量，或者可能根本不传输字节。可通过调用可选择通道的 isBlocking 方法来确定其阻塞模式。 </li>
+<li>新创建的可选择通道总是处于阻塞模式。在结合使用基于选择器的多路复用时，非阻塞模式是最有用的。向选择器注册某个通道前，必须将该通道置于非阻塞模式，并且在注销之前可能无法返回到阻塞模式。 </li>
+</ul>
+<h2 id="SelectableChannel中的主要方法"><a href="#SelectableChannel中的主要方法" class="headerlink" title="SelectableChannel中的主要方法"></a>SelectableChannel中的主要方法</h2><ul>
+<li>abstract  SelectableChannel configureBlocking(boolean block) ：        调整此通道的阻塞模式，true为阻塞，false为非阻塞。 </li>
+<li>SelectionKey register(Selector sel, int ops) ：向给定的选择器注册此通道，返回一个选择键。 </li>
+<li>abstract  SelectionKey register(Selector sel, int ops, Object att) ：         向给定的选择器注册此通道，返回一个选择键。 </li>
+</ul>
+<h2 id="ServerSocketChannel-（监听"><a href="#ServerSocketChannel-（监听" class="headerlink" title="ServerSocketChannel （监听)"></a>ServerSocketChannel （监听)</h2><p>ServerSocketChannel：A selectable channel for stream-oriented listening sockets。监听Sockets的SelectableChannel</p>
+<p>1、具有阻塞和非阻塞两种模式</p>
+<p>2、可以注册到多路复用器上</p>
+<p>3、基于TCP连接</p>
+<p>4、需要绑定到特定端口上</p>
+<p>一、构造方法：<br>protected  ServerSocketChannel(SelectorProvider provider)  受保护的方法，用户不能直接使用，只能通过该类的静态方法open()获取一个实例。<br>ServerSocketChannel ssc=ServerSocketChannel.open();</p>
+<p>二、常用方法：<br>abstract  SocketChannel accept() ： 接受到此通道套接字的连接，连接后产生一个SocketChannel。<br>static ServerSocketChannel open() ：通过调用此类的 open 方法创建服务器套接字通道。新创建的服务器套接字通道已打开，但尚未绑定。</p>
+<p>abstract  ServerSocket socket() ： 获取与此通道关联的服务器套接字，通过服务器套接字的bind()方法去绑定监听地址和端口。<br>SelectableChannel configureBlocking(boolean block) ：父类中的方法，调整此通道的阻塞模式。默认为true，阻塞模式。参数设置为false，将通道调整为非阻碍模式 </p>
+<h2 id="SocketChannel（读写"><a href="#SocketChannel（读写" class="headerlink" title="SocketChannel（读写)"></a>SocketChannel（读写)</h2><p>通过调用此类的某个 open 方法创建套接字通道。新创建的套接字通道已打开，但尚未连接。可通过调用套接字通道的 connect 方法连接该通道；一旦连接后，关闭套接字通道之前它会一直保持已连接状态。可单独地关闭套接字通道的输入端和输出端，而无需实际关闭该通道。调用关联套接字对象的 shutdownInput 方法来关闭某个通道的输入端将导致该通道上的后续读取操作返回 -1（指示流的末尾）。调用关联套接字对象的 shutdownOutput 方法来关闭通道的输出端</p>
+<p>static SocketChannel open()           打开套接字通道。</p>
+<p>static SocketChannel open(SocketAddress remote)      打开套接字通道并将其连接到远程地址。</p>
+<p> abstract  boolean connect(SocketAddress remote)        连接此通道的套接字。 </p>
+<p> long read(ByteBuffer[] dsts)  将字节序列从此通道读入给定的缓冲区。 </p>
+<p>long write(ByteBuffer[] srcs)   将字节序列从给定的缓冲区写入此通道。 </p>
+<p>abstract  long write(ByteBuffer[] srcs, int offset, int length)    将字节序列从给定缓冲区的子序列写入此通道。<br>abstract  SelectableChannel configureBlocking(boolean block)   调整此通道的阻塞模式。</p>
+<p> SelectionKey register(Selector sel, int ops)     向给定的选择器注册此通道，返回一个选择键。 </p>
+<p>abstract  SelectionKey register(Selector sel, int ops, Object att)      向给定的选择器注册此通道，返回一个选择键。<br>注意：采用channel读写数据要用缓冲区Buffer对象</p>
+<h2 id="Selector-多路复用器-选择器"><a href="#Selector-多路复用器-选择器" class="headerlink" title="Selector(多路复用器/选择器)"></a>Selector(多路复用器/选择器)</h2><p>Selector类是Java提供的一个实现多路复用IO技术的类，它的底层调用了操作系统提供的IO复用技术，不同的操作系统，实现的复用技术不同。在应用过程中，用户可以根据并发数量的多少来创建多个Selector对象，一个通道可以注册到不同的selector中（要注意线程安全），但在同一个selector中，一个通道只能注册一次。</p>
+<h2 id="多路复用技术select、poll、epoll简介"><a href="#多路复用技术select、poll、epoll简介" class="headerlink" title="多路复用技术select、poll、epoll简介"></a>多路复用技术select、poll、epoll简介</h2><ul>
+<li>在详解Selector类之前，先讲解多路IO复用技术：</li>
+<li>多路复用技术：最早用在空管中，一个空管人员管理多架飞机的进出港及飞行状态，后来在通信领域大量使用多路复用技术提高通信能力。</li>
+<li>网络IO中的多路复用技术就是在单个线程中通过记录跟踪每一个Sock(I/O流)的状态来同时管理多个I/O流，使用该技术来提高服务器的吞吐能力。</li>
+<li>1983年，加州大学伯克利分校Unix开发小组就在BSD（Unix加州大学伯克利分校版）中引入了IO多路复用技术select的实现。</li>
+</ul>
+<p>select 被实现以后，很快就暴露出了很多问题：</p>
+<ol>
+<li>对socket进行扫描时是线性扫描，即采用轮询的方法，效率较低。<br>当套接字比较多的时候，每次select()都要通过遍历FD_SETSIZE个Socket来完成调度，不管哪个Socket是活跃的，都遍历一遍，这会浪费很多CPU时间。</li>
+<li>select()仅仅告诉应用程序有几个sock(I/O stream)出现了数据，但是并不会告诉你是那个sock上有数据，还需调用于selectedKeys()方法去找出这些socket，由应用程序去遍历这些SelectionKey集合。</li>
+<li>select 只能监视1024个链接， linux 定义在头文件中的，参见FD_SETSIZE。</li>
+<li>需要维护一个用来存放大量fd的数据结构，这样会使得用户空间和内核空间在传递该结构时复制开销大。</li>
+<li>select 不是线程安全的。<br>select轮询方法对于早期的网络应用及PC服务器来说，还是能满足要求。</li>
+</ol>
+<p>14年后，1997年，人们实现了poll, poll 修复了select的很多问题</p>
+<ol>
+<li>poll 去掉了1024个连接的限制，它的底层采用了链式结构。</li>
+<li>poll 从设计上来说，不再传入所有的socket的结构数组，传递的是一个pollfd结构的数组。<br>3）poll还有一个特点是“水平触发”，如果报告了fd后，没有被处理，那么下次poll时会再次报告该fd。<br>select和 poll系统调用的本质一样，管理多个描述符，也是进行轮循。包含大量文件描述符的数组被整体复制于用户态和内核的地址空间之间，而不论这些文件描述符是否就绪，它的开销随着文件描述符数量的增加而线性增大。</li>
+</ol>
+<p>在2002年,  Davide Libenzi 实现了epoll。<br>epoll 可以说是I/O 多路复用最新的一个实现，epoll 修复了poll 和select绝大部分问题：</p>
+<ol>
+<li>没有最大并发连接的限制，能打开的FD的上限远大于1024（1G的内存上能监听约10万个端口）。</li>
+<li>效率提升，不采用轮询的方式，而是事件响应方式（Reactor方式）。类似于Java中控件的响应方式，定义事件，定义事件的响应函数，一旦事件发生，则执行对应的函数，这个函数一般称为callback函数；即Epoll最大的优点就在于它只管你“活跃”的连接，而跟连接总数无关，因此在实际的网络环境中，Epoll的效率就会远远高于select和poll。</li>
+<li>内存拷贝，利用mmap()文件映射内存加速与内核空间的消息传递；即epoll使用mmap减少复制开销。（共享内存的方式实现）</li>
+</ol>
+<p>epoll支持水平触发和边缘触发，最大的特点在于边缘触发，它只告诉进程哪些fd刚刚变为就绪态，并且只会通知一次。还有一个特点是，epoll使用“事件”的就绪通知方式，通过epoll_ctl注册fd，一旦某个文件描述符就绪，内核就会采用类似callback的回调机制来激活该fd，epoll_wait便可以收到通知。（去掉了遍历文件描述符，而是通过监听回调的的机制，这正是epoll的魅力所在。）<br>目前，epoll只在linux里实现。因此，Java NIO的Selector(多路复用器)在不同的操作系统中有不同的实现。在Windows中任然采用poll轮询方式，而在linux中则采用epoll事件响应模式（Reactor）。在网络服务器操作系统的选择中，一般首选linux。<br>   表面上看epoll的性能最好，但是在连接数少并且连接都十分活跃的情况下，select和poll的性能可能比epoll好，毕竟epoll的通知机制需要很多函数回调。</p>
+<h2 id="Selector的创建"><a href="#Selector的创建" class="headerlink" title="Selector的创建"></a>Selector的创建</h2><p>Selector对象的创建是采用工厂方法，调用该类的open()方法完成。<br>Selector.open()方法创建一个Selector对象，在open方法中调用系统级默认的 SelectorProvider 对象的 openSelector 方法来创建的一个selector。SelectorProvider对象的实现会根据不同的操作系统选择不同的实现，Windows和Linux选择的复用技术是不同的，windows用的是poll而linux用的是epoll，因而效率也不一样。<br>Selector selector = Selector.open();</p>
+<h2 id="将SelectableChannel注册到selector中"><a href="#将SelectableChannel注册到selector中" class="headerlink" title="将SelectableChannel注册到selector中"></a>将SelectableChannel注册到selector中</h2><p>注册Channel到Selector：<br>1、 selector中的channel必须是非阻塞<br>channel.configureBlocking(false);<br>2、将channel对象注册到指定的selector中，需要指明selector需要监听的IO操作，监听操作有4个：Connect、Accept、Read、Write，这4个操作用SelectionKey类的4个标志表示，SelectionKey.OP_CONNECT、SelectionKey.OP_ACCEPT、SelectionKey.OP_READ、SelectionKey.OP_WRITE，它们可以使用位或运算。比如若需要同时监听读和写，可以使用：<br>SelectionKey.OP_READ | SelectionKey.OP_WRITE 表示，实际应用中出现同时监听读又监听写的情况很少。对服务器来说，总是监听客户端的请求，有了请求后，在处理请求过程中就直接响应，这时的写操作没有必要去让Selector去监听。<br>服务器端有两个Channel，一个是ServerSocketChannel，它注册的事件是Accept。SocketChannel注册的是Read</p>
+<p>register()方法的第二个参数。这是一个“interest集合”，意思是在通过Selector监听Channel时对什么事件感兴趣。可以监听四种不同类型的事件：<br>通道触发了一个事件意思是该事件已经就绪。所以，某个channel成功连接到另一个服务器称为“连接就绪”。一个ServerSocketChannel准备好接收新进入的连接称为“接收就绪”。一个有数据可读的通道可以说是“读就绪”。等待写数据的通道可以说是“写就绪”。<br>这四种事件用SelectionKey的四个常量来表示：<br>如果你对不止一种事件感兴趣，那么可以用“位或”操作符将常量连接起来，如下：<br>int interestSet = SelectionKey.OP_READ | SelectionKey.OP_WRITE;<br>第三个参数：可以在用register()方法向Selector注册Channel的时候附加对象</p>
+<p>3、调用select()方法返回事件就绪的那些通道。<br>下面是select()方法：<br>int select()<br>int select(long timeout)<br>int selectNow()<br>select()一直阻塞到至少有一个通道在你注册的事件上就绪了。<br>select(long timeout)和select()一样，除了最长会阻塞timeout毫秒(参数)。<br>selectNow()不会阻塞，不管什么通道就绪都立刻返回。（此方法执行非阻塞的选择操作。如果自从前一次选择操作后，没有通道变成可选择的，则此方法直接返回零。）<br>select()方法返回的int值表示有多少通道已经就绪。亦即，自上次调用select()方法后有多少通道变成就绪状态。如果调用select()方法，有一个通道变成就绪状态，返回了1，若再次调用select()方法，如果另一个通道就绪了，它会再次返回1。如果对第一个就绪的channel没有做任何操作，现在就有两个就绪的通道。</p>
+<p>4、通过调用selector的selectedKeys()方法，访问“已选择键集（selected key set）”中的就绪通道。Set selectedKeys = selector.selectedKeys();可以遍历这个已选择的键集合来访问就绪的通道。<br>public abstract class SelectionKey<br>{<br>    public static final int OP_READ;      public static final int OP_WRITE;        public static final int OP_CONNECT;<br>    public static final int OP_ACCEPT;<br>    public abstract SelectableChannel channel();       public abstract Selector selector();       public abstract void cancel();<br>    public abstract boolean isValid();      public abstract int interestOps();      public abstract void iterestOps(int ops);<br>    public abstract int readyOps();      public final boolean isReadable();      public final boolean isWritable();<br>    public final boolean isConnectable();      public final boolean isAcceptable();<br>    public final Object attach(Object ob);<br>    public final Object attachment();<br>}</p>
+<h2 id="Buffer的使用"><a href="#Buffer的使用" class="headerlink" title="Buffer的使用"></a>Buffer的使用</h2><p>Java BIO数据的读写通过字节数组就可以完成，而NIO中数据的读写操作则需要使用Buffer类来完成。Buffer的本意就是缓冲区的意思，它是一块可以写入数据，然后可以从中读取数据的内存，这块内存被包装成NIO Buffer对象，并提供了一组方法，用来方便的访问该块内存。<br>Buffer的直接子类有：ByteBuffer、CharBuffer、IntBuffer、LongBuffer、FloatBuffer…，我们这里主要使用ByteBuffer。<br>Buffer有三个基本属性：<br>capacity ：缓冲区的容量。<br>position： 读取或写入的元素的位置。<br>limit： 缓冲区有两个状态，一个是写状态，一个是读状态。当处于写状态时，limit表示能写的上限位置，它的值等于capacity。当转换成读状态时，limit表示缓冲区能读数据的上限位置。<br><img src="https://gitee.com/gutianzhi/imgbed/raw/master/markdownImgs/20211213142127.png"></p>
+<p>缓冲区的操作：<br>clear()： 使缓冲区为读操作做好准备：它将限制设置为容量大小，将位置设置为 0。 </p>
+<p>flip()： 缓冲区读写状态的转换</p>
+<p>static ByteBuffer allocate(int capacity) ：分配一个新的字节缓冲区。</p>
+<p>static ByteBuffer wrap(byte[] array) ：     将 byte 数组包装到缓冲区中，并构造一个ByteBuffer 。</p>
+<p>static ByteBuffer wrap(byte[] array, int offset, int length) ：将 byte 数组包装到缓冲区中，并构造一个ByteBuffer。</p>
+<p> byte[] array()  ：将ByteBuffer中的数据转换为 byte 数组。</p>
+<p> get(byte[] dst) ：将ByteBuffer中的内容取出到dst。 </p>
+<p> put(byte[] src) ：将src中的内容放到ByteBuffer中。 </p>
+<p> put(byte[] src, int offset, int length)：将src中的内容放置到ByteBuffer中。 </p>
+<p>SelectableChannel 对象的多路复用器，也可称为选择器。它是Java NIO核心组件中的一个，用于检查一个或多个NIO Channel（通道）的状态是否处于可读、可写。如此可以实现单线程管理多个channels，也就是可以管理多个网络链接。<br>使用Selector的好处在于： 使用更少的线程就可以处理高并发，高吞吐。 相比BIO，一客户一线程的模式，大大减少了线程上下文切换带来的开销以及大量线程的开销。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Guttttzhi</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/12/13/javanetwork/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-NIO%E7%BC%96%E7%A8%8B/">http://example.com/2021/12/13/javanetwork/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-NIO%E7%BC%96%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Guttttzhi'Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a><a class="post-meta__tags" href="/tags/NIO/">NIO</a></div><div class="post_share"><div class="social-share" data-image="https://img0.baidu.com/it/u=454715195,1460490061&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=501&amp;h=500" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/12/13/javanetwork/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-AIO%E7%BC%96%E7%A8%8B/"><img class="prev-cover" src="https://img0.baidu.com/it/u=454715195,1460490061&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=501&amp;h=500" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">java网络编程-AIO编程</div></div></a></div><div class="next-post pull-right"><a href="/2021/12/01/23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><img class="next-cover" src="https://img0.baidu.com/it/u=454715195,1460490061&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=501&amp;h=500" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">23种设计模式</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/11/25/javanetwork/java网络编程-石头剪刀布/" title="java网络编程-石头剪刀布"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-25</div><div class="title">java网络编程-石头剪刀布</div></div></a></div><div><a href="/2021/12/13/javanetwork/java网络编程-AIO编程/" title="java网络编程-AIO编程"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-13</div><div class="title">java网络编程-AIO编程</div></div></a></div><div><a href="/2021/11/30/javanetwork/java网络编程-Socket编程/" title="java网络编程-Socket编程"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-30</div><div class="title">java网络编程-Socket编程</div></div></a></div><div><a href="/2021/11/29/javanetwork/java网络编程-线程/" title="java网络编程-线程"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-29</div><div class="title">java网络编程-线程</div></div></a></div><div><a href="/2021/11/29/javanetwork/为什么NIO相较于BIO能解决高并发问题/" title="为什么NIO相较于BIO能解决高并发问题"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-29</div><div class="title">为什么NIO相较于BIO能解决高并发问题</div></div></a></div><div><a href="/2021/12/01/23种设计模式/" title="23种设计模式"><img class="cover" src="https://img0.baidu.com/it/u=454715195,1460490061&fm=253&fmt=auto&app=120&f=JPEG?w=501&h=500" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-01</div><div class="title">23种设计模式</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E7%A7%8D%E7%BD%91%E7%BB%9CIO%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">五种网络IO模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%95%E5%B1%82%E7%BD%91%E7%BB%9CIO%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">底层网络IO的实现方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%BB%E5%A1%9EIO"><span class="toc-number">1.2.</span> <span class="toc-text">阻塞IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E9%98%BB%E5%A1%9EIO"><span class="toc-number">1.3.</span> <span class="toc-text">非阻塞IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8IO"><span class="toc-number">1.4.</span> <span class="toc-text">多路复用IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E9%A9%B1%E5%8A%A8IO"><span class="toc-number">1.5.</span> <span class="toc-text">信号驱动IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5IO"><span class="toc-number">1.6.</span> <span class="toc-text">异步IO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E7%A7%8D%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">1.7.</span> <span class="toc-text">五种模型的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95NIO%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.8.</span> <span class="toc-text">简单NIO的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8IO%E6%8A%80%E6%9C%AF%E7%9A%84NIO%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">多路复用IO技术的NIO模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Channel"><span class="toc-number">2.2.</span> <span class="toc-text">Channel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SelectableChannel%E4%B8%AD%E7%9A%84%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">SelectableChannel中的主要方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ServerSocketChannel-%EF%BC%88%E7%9B%91%E5%90%AC"><span class="toc-number">2.4.</span> <span class="toc-text">ServerSocketChannel （监听)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SocketChannel%EF%BC%88%E8%AF%BB%E5%86%99"><span class="toc-number">2.5.</span> <span class="toc-text">SocketChannel（读写)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selector-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">2.6.</span> <span class="toc-text">Selector(多路复用器&#x2F;选择器)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AFselect%E3%80%81poll%E3%80%81epoll%E7%AE%80%E4%BB%8B"><span class="toc-number">2.7.</span> <span class="toc-text">多路复用技术select、poll、epoll简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Selector%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">2.8.</span> <span class="toc-text">Selector的创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86SelectableChannel%E6%B3%A8%E5%86%8C%E5%88%B0selector%E4%B8%AD"><span class="toc-number">2.9.</span> <span class="toc-text">将SelectableChannel注册到selector中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Buffer%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.10.</span> <span class="toc-text">Buffer的使用</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('https://img0.baidu.com/it/u=454715195,1460490061&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=501&amp;h=500')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Guttttzhi</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to my blog!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="biu,biu,biu" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/theme_f/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_injector_config();
+  }
+  </script><script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-butterfly-clock/lib/clock.min.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+                        function gitcalendar_injector_config(){
+                          var parent_div_git = document.getElementById('recent-posts');
+                          var item_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 280px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+                          parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+                          console.log('已挂载gitcalendar')
+                          }
+
+                        if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+                            gitcalendar_injector_config()
+                            GitCalendarInit("https://gitcalendar.akilar.top/api?gutianzhi",['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620'],'gutianzhi')
+                        }
+                      </script><!-- hexo injector body_end end --></body></html>
